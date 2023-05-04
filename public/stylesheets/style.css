@@ -1,0 +1,221 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.navbar{
+  height: 80px;
+  width: 100%;
+  background-color: green;
+  display: flex;
+}
+ul{
+  list-style: none;
+  padding-top: 5px;
+}
+ul li{
+  color: black;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 20px;
+}
+*{
+  margin: 0%;
+  padding: 0%;
+}
+ul li:hover{
+  color: white;
+}
+.box{
+  height: 425px;
+  width: 23%;
+  background-color: aqua;
+  margin-top: 1%;
+  margin-left: 2%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* align-items: center; */
+}
+.box ul{
+  list-style: none;
+  /* align-items: center; */
+  margin: auto;
+}
+.box ul li{
+  display: block;
+  color: black;
+  padding: 25px;
+  align-items: center;
+  background-color: rgb(140, 140, 221);
+  margin-top: 5px;
+  /* margin: auto; */
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.box ul li:hover{
+  color: blue;
+
+}
+.main-content{
+	width: 50%;
+	border-radius: 20px;
+	box-shadow: 0 5px 5px rgba(0,0,0,.4);
+	margin: 5em auto;
+	display: flex;
+}
+.company__info{
+	background-color: #008080;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+}
+.fa-android{
+	font-size:3em;
+}
+@media screen and (max-width: 640px) {
+	.main-content{width: 90%;}
+	.company__info{
+		display: none;
+	}
+	.login_form{
+		border-top-left-radius:20px;
+		border-bottom-left-radius:20px;
+	}
+}
+@media screen and (min-width: 642px) and (max-width:800px){
+	.main-content{width: 70%;}
+}
+.row > h2{
+	color:#008080;
+}
+.login_form{
+	background-color: #fff;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+	border-top:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+form{
+	padding: 0 2em;
+}
+.form__input{
+	width: 100%;
+	border:0px solid transparent;
+	border-radius: 0;
+	border-bottom: 1px solid #aaa;
+	padding: 1em .5em .5em;
+	padding-left: 2em;
+	outline:none;
+	margin:1.5em auto;
+	transition: all .5s ease;
+}
+.form__input:focus{
+	border-bottom-color: #008080;
+	box-shadow: 0 0 5px rgba(0,80,80,.4); 
+	border-radius: 4px;
+}
+.btn{
+	transition: all .5s ease;
+	width: 70%;
+	border-radius: 30px;
+	color:#008080;
+	font-weight: 600;
+	background-color: #fff;
+	border: 1px solid #008080;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+.btn:hover, .btn:focus{
+	background-color: #008080;
+	color:#fff;
+}
+
+/* body {
+  width: 100%;
+  height: 100vh;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.pexels.com/photos/6985003/pexels-photo-6985003.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  font-family: 'PT Serif', sans-serif; 
+  font-size: 25px; 
+  
+} */
+/* 
+section {
+  height: 50%;
+  background: hsla(175,62%,80%, 0.8);
+  border-radius: 25px;
+  text-align: center; 
+  width: 50%;
+  height: 80%;
+} */
+
+form {
+  max-width: 100%;
+}
+
+.user-data {
+  background: rgba(2, 59, 97, 0.3);
+  caret-color: hsl(21, 92%, 48%);  /*blinking cursor color */
+  color: #b12323;
+  border: 3px solid #fff;
+  border-radius: 8px 12px;
+  margin: auto; /* automatically center the block element */
+  margin-block: 30px;
+  padding: 9px 18px;
+  display: block;  
+}
+
+input[placeholder]:focus {
+  background: hsla(0, 50%, 80%, 0.2);
+  border: 2px dotted hsla(85, 30%, 2%, 0.9);
+  transition: .5s;
+}
+
+.user-data::placeholder {
+  color: #333;
+}
+
+.login {
+  background: hsl(205,81%,78%); 
+  color: #f3f3f3;
+  font-weight: bold; 
+  font-size: 28px;
+  padding: 7px 15px;
+  border: 2px solid;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.login[value]:hover {
+  background: hsla(0, 50%, 80%, 0.2);
+  color: #333;
+  transition: .2s;
+}
+
+p {
+  font-size: 14px;
+}
+.center{
+  margin-top: 10%;
+  padding: 20px;
+  margin-left: 15%;
+  height: 50%;
+  background: hsla(175,62%,80%, 0.8);
+  border-radius: 25px;
+  text-align: center; 
+  width: 50%;
+  height: 80%;
+}

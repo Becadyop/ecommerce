@@ -1,0 +1,31 @@
+ <link rel="stylesheet" href="/stylesheets/adminproduct.css"> 
+  <link rel="stylesheet" href="/stylesheets/home.css">
+
+  
+  <div class="navbar">
+    <ul>
+        <li>admin home</li></a>
+        <a href="/admin/addproduct"><li>add products</li></a>
+        <li>orders</li>
+        <li><a style="text-decoration: none; color:rgb(250, 250, 250)" href="/admin">login</li></a>
+        <li>help</li>
+    </ul>
+  </div>
+
+<div id="feedback-form">
+  <h2 style="text-transform: uppercase;" class="header">product page</h2>
+  <div>
+    <form action="/admin/addproduct" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="product name"></input>
+      <input type="text" name="product" placeholder="product price"></input>
+         <input type="text" name="description" placeholder="product description"></input>
+      {{!-- <label for="feedback-notify">Remind me about this event via SMS</label> --}}
+      {{!-- <input type="checkbox" id="feedback-notify" name="notify"> --}}
+      {{!-- <input type="text" id="feedback-phone" name="phone" placeholder="Phone number"></input> --}}
+     
+         <input type="file" name="image">
+     
+      <button type="submit">submit</button>
+    </form>
+  </div>
+</div>
