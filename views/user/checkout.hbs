@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity=
+        "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 400px;
+            width: 300px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            margin: auto;
+            margin-top: 5%;
+        }
+        .conta{
+            height: 400px;
+            width: 400px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>checkout</h1>
+        <div class="conta">
+        <h2 id="ids">{{order.id}}</h2>
+        <h3 id="amt">{{order.amount}}</h3>
+            <button id="rzp-button1">Pay with Razorpay</button>
+        </div>
+    </div>
+
+
+    <script>
+        let id=document.getElementById('ids').innerHTML;
+        let amount=document.getElementById('amt').innerHTML;
+var options = {
+    "key": "rzp_test_wrOUAh9JJ4LynI", // Enter the Key ID generated from the Dashboard
+    "amount": amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Acme Corp",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        pay(response)
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature);
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9000090000"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+function pay(response) {
+    $.post('/varify',
+        data={
+            response
+        },(data,status)=>{
+            console.log(data)
+            window.location.href="/"
+        }
+    )
+   
+
+}
+</script>
+   
+</body>
+</html>

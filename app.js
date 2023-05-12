@@ -6,6 +6,7 @@ var logger = require('morgan');
 var hbs=require('hbs');
 var session=require('express-session')
 var fileupload=require('express-fileupload')
+var razor=require('./payment/razor')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
